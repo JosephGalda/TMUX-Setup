@@ -7,12 +7,11 @@ tmux splitw -v -p 71
 tmux splitw -v -p 60
 tmux splitw -h -p 50
 tmux selectp -t 1 
-tmux send-keys -t 1 'tmux setw synchronize-panes on' C-m
-tmux send-keys -t 1 'bash' C-m
-tmux send-keys -t 1 "sleep 3; docker exec -it ${RN:0:2} bash" C-m &
+tmux setw synchronize-panes on
+tmux send-keys "sleep 2; docker exec -it ${RN:0:2} bash" C-m
+tmux send-keys "clear" C-m &
 sleep .5
-tmux send-keys -t 1 'tmux setw synchronize-panes off' C-m
-sleep 1
+tmux setw synchronize-panes off
 tmux send-keys -t 1 "ssh ${RN}"
 tmux send-keys -t 2 "ssh ${RN}"
 tmux send-keys -t 3 "ssh ${RN}"
@@ -29,12 +28,11 @@ tmux splitw -v -p 71
 tmux splitw -v -p 60
 tmux splitw -h -p 50
 tmux selectp -t 1 
-tmux send-keys -t 1 'tmux setw synchronize-panes on' C-m
-tmux send-keys -t 1 'bash' C-m
-tmux send-keys -t 1 "sleep 3; docker exec -it ${RN:0:2} bash" C-m &
+tmux setw synchronize-panes on
+tmux send-keys "sleep 2; docker exec -it ${RN:0:2} bash" C-m
+tmux send-keys "clear" C-m
 sleep .5
-tmux send-keys -t 1 'tmux setw synchronize-panes off' C-m
-sleep 1
+tmux setw synchronize-panes off
 tmux send-keys -t 1 "ssh ${RN}"
 tmux send-keys -t 2 "ssh ${RN}"
 tmux send-keys -t 3 "ssh ${RN}"
