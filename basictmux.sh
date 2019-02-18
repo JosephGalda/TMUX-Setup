@@ -11,10 +11,15 @@ tmux setw synchronize-panes on
 tmux send-keys -t 1 "sleep 2; docker exec -it ${RN:0:2} bash" C-m
 tmux setw synchronize-panes off
 sleep .5
+tmux send-keys -t 1 "clear" C-m
 tmux send-keys -t 1 "ssh ${RN}"
+tmux send-keys -t 2 "clear" C-m
 tmux send-keys -t 2 "ssh ${RN}"
+tmux send-keys -t 3 "clear" C-m
 tmux send-keys -t 3 "ssh ${RN}"
+tmux send-keys -t 4 "clear" C-m
 tmux send-keys -t 4 "remote_dash ${RN}"
+tmux send-keys -t 5 "clear" C-m
 tmux send-keys -t 5 "remote_rviz ${RN} ${SN}"
 done
 
@@ -31,10 +36,15 @@ tmux setw synchronize-panes on
 tmux send-keys -t 1 "sleep 2; docker exec -it ${RN:0:2} bash" C-m
 tmux setw synchronize-panes off 
 sleep .5
+tmux send-keys -t 1 "clear" C-m
 tmux send-keys -t 1 "ssh ${RN}"
+tmux send-keys -t 2 "clear" C-m
 tmux send-keys -t 2 "ssh ${RN}"
+tmux send-keys -t 3 "clear" C-m
 tmux send-keys -t 3 "ssh ${RN}"
+tmux send-keys -t 4 "clear" C-m
 tmux send-keys -t 4 "remote_dash ${RN}"
+tmux send-keys -t 5 "clear" C-m
 tmux send-keys -t 5 "remote_rviz ${RN} ${SN}"
 done
 
@@ -50,3 +60,4 @@ tmux send-keys -t 1 'bash -i' C-m
 tmux send-keys -t 1 'tmux setw synchronize-panes off' C-m
 tmux select-window -t Robots:1
 tmux -2 attach-session -t Robots 
+
